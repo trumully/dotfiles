@@ -1,0 +1,17 @@
+$ErrorActionPreference = "Stop"
+
+# Populate env:Path (required during initial bootstrap)
+{{ template "script-env-powershell.ps1.tmpl" }}
+
+{{ $winget_list := (output "cmd" "/C" "winget export -s winget -o %TEMP%\\winget_list && type %TEMP%\\winget_list") -}}
+{{ range .packages.winget -}}
+{{   if not (contains . $winget_list) -}}
+    Write-Host Installing winget package '{{ .}}'
+    winget install `
+        --scope user -e -s winget --id {{ . }} `
+        --accept-source-agreements `
+        --accept-package-agreements `
+        --silent `
+        --disable-interactivity
+{{   end -}}
+{{ end }}

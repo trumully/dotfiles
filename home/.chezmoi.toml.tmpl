@@ -1,0 +1,8 @@
+{{ $email := promptString "email" -}}
+
+[data]
+email = {{ $email | quote }}
+
+[interpreters.ps1]
+command = "pwsh"
+args = ["-NoLogo", "-NoProfile"]

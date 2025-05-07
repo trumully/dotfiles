@@ -1,0 +1,9 @@
+LICENSE
+README.md
+
+{{ if ne .chezmoi.os "windows" }}
+Documents
+AppData
+ProgramData
+**/*.ps1
+{{ end }}

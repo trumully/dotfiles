@@ -1,0 +1,14 @@
+[packages]
+winget = [
+  "Git.Git",
+  "GitHub.cli",
+  "Microsoft.WindowsTerminal",
+  "Microsoft.VisualStudioCode",
+  "Volta.Volta",
+  "astral-sh.uv",
+  "ajeetdsouza.zoxide",
+  "Discord.Discord",
+  "OpenWhisperSystems.Signal",
+  "Mozilla.Firefox",
+  "JanDeDobbeleer.OhMyPosh"
+]

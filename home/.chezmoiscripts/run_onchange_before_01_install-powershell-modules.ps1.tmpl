@@ -1,0 +1,11 @@
+$ErrorActionPreference = "Stop"
+
+# {{ include (joinPath .chezmoi.workingTree "bin/powershell-install-resources.ps1") | sha256sum }}
+
+# Setup modules for PowerShell Core
+# {{- if lookPath "pwsh.exe" }}
+pwsh.exe "{{ .chezmoi.workingTree }}/bin/powershell-install-resources.ps1"
+if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+}
+# {{- end}}

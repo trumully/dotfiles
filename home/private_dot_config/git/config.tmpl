@@ -1,0 +1,24 @@
+[core]
+	editor = code --wait
+[user]
+    name = Truman Mulholland
+    email = {{ .email | quote }}
+[color]
+    ui = true
+[alias]
+    riom = rebase --interactive origin/main
+	btom = "!f() { git switch -c $1 origin/main; }; f"
+[init]
+	defaultBranch = main
+[rebase]
+	autoSquash = true
+	autoStash = true
+[interactive]
+	singleKey = true
+{{- $ghPath := lookPath "gh" }}
+{{- if $ghPath }}
+[credential "https://github.com"]
+	helper = gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = gh auth git-credential
+{{- end }}

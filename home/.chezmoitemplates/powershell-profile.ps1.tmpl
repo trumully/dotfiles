@@ -1,0 +1,23 @@
+if (-not $Global:PSDefaultParameterValues) {$Global:PSDefaultParameterValues = @{}}
+
+$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = [Text.Encoding]::UTF8
+$Global:PSDefaultParameterValues['*:Encoding'] = $Global:PSDefaultParameterValues['*:InputEncoding'] = $Global:PSDefaultParameterValues['*:OutputEncoding'] = $OutputEncoding
+
+if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin_mocha.omp.json" | Invoke-Expression
+}
+
+$AsyncProfile = {
+    . "$PSScriptRoot\PSReadline-Config.ps1"
+}
+
+if (Import-Module ProfileAsync -PassThru -ea Ignore)
+{
+    Import-ProfileAsync $AsyncProfile
+}
+else
+{
+    . $AsyncProfile
+}
+
+Invoke-Expression (& { (zoxide init powershell | Out-String) })

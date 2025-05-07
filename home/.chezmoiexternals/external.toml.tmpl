@@ -1,0 +1,22 @@
+# {{- $fontsDir := "" }}
+# {{- if eq .chezmoi.os "linux" }}
+# {{-   $fontsDir = ".local/share/fonts" }}
+# {{- else if eq .chezmoi.os "windows" }}
+# {{-   $fontsDir = ".cache/chezmoi/fonts" }}
+# {{- end }}
+
+# {{- if eq .chezmoi.os "windows" }}
+["{{ $fontsDir }}/JetBrainsMono"]
+type = "archive"
+url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.tar.xz"
+include = [
+  "JetBrainsMonoNerdFont-Bold.ttf",
+  "JetBrainsMonoNerdFont-BoldItalic.ttf",
+  "JetBrainsMonoNerdFont-Italic.ttf",
+  "JetBrainsMonoNerdFont-Regular.ttf",
+  "JetBrainsMonoNerdFontMono-Bold.ttf",
+  "JetBrainsMonoNerdFontMono-BoldItalic.ttf",
+  "JetBrainsMonoNerdFontMono-Italic.ttf",
+  "JetBrainsMonoNerdFontMono-Regular.ttf"
+]
+# {{- end }}
