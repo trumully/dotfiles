@@ -10,5 +10,7 @@ winget = [
   "Discord.Discord",
   "OpenWhisperSystems.Signal",
   "Mozilla.Firefox",
-  "JanDeDobbeleer.OhMyPosh"
+  "JanDeDobbeleer.OhMyPosh",
+  "RedHat.Podman",
+  "RedHat.Podman-Desktop"
 ]
