@@ -4,6 +4,7 @@ winget = [
   "GitHub.cli",
   "Microsoft.WindowsTerminal",
   "Microsoft.VisualStudioCode",
+  "Microsoft.PowerShell",
   "Volta.Volta",
   "astral-sh.uv",
   "ajeetdsouza.zoxide",
