@@ -5,6 +5,7 @@ winget = [
   "Microsoft.WindowsTerminal",
   "Microsoft.VisualStudioCode",
   "Microsoft.PowerShell",
+  "tummychow.git-absorb",
   "Volta.Volta",
   "astral-sh.uv",
   "ajeetdsouza.zoxide",
